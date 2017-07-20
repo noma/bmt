@@ -190,7 +190,7 @@ public:
 		return ss.str();
 	}
 
-	std::string header_string()
+	std::string header_string() const
 	{
 		return header_string(!name_.empty());
 	}
