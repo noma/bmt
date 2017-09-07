@@ -11,7 +11,7 @@ Building:
 ```bash
 mkdir build
 cd build
-cmake ..
+cmake -DNOMA_BMT_BUILD_EXAMPLES=TRUE ..
 make
 ```
 

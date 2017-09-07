@@ -5,7 +5,9 @@
 # do not put executable into subdir
 set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
 
-# example application
-add_executable(example example.cpp)
-target_link_libraries(example noma_bmt)
+if (NOMA_BMT_BUILD_EXAMPLES)
+	# simpel example application measuring overhead
+	add_executable(example example.cpp)
+	target_link_libraries(example noma_bmt)
+endif ()
 
