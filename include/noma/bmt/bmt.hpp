@@ -27,7 +27,7 @@ using duration = std::chrono::duration<rep, period>;
 using clock = std::conditional<std::chrono::high_resolution_clock::is_steady, std::chrono::high_resolution_clock, std::chrono::steady_clock>::type;
 using time_point = clock::time_point;
 
-// convencience duration types
+// convenience duration types
 using nanoseconds = std::chrono::duration<rep, std::nano>;
 using microseconds = std::chrono::duration<rep, std::micro>;
 using milliseconds = std::chrono::duration<rep, std::milli>;
@@ -66,9 +66,9 @@ public:
 	 * avoid re-allocating memory while benchmarking.
 	 * Optionally, a number of ignored warm-up values can be specified.
 	 */
-	statistics(const std::string& name, size_t count, size_t warmup_count = 0) : warmup_count_(warmup_count), name_(name) 
+	statistics(const std::string& name, size_t expected_count, size_t warmup_count = 0) : warmup_count_(warmup_count), name_(name)
 	{
-		times_.reserve(count_);
+		times_.reserve(expected_count);
 	}
 
 	/**
